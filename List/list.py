@@ -30,6 +30,17 @@ class Lista:
         self.dados[i] = self.dados[self.nelemens - 1]
         self.nelemens -= 1
         return True
+    
+    def smaller(self) -> (bool, int):
+        if self.nelemens == 0:
+            return (False, -1)
+        smaller = self.dados[0]
+        for i in range(self.nelemens):
+            if self.dados[i] < smaller:
+                smaller = self.dados[i]
+        return (True, smaller)
+
+    
 
 
 arr = Lista(5)
@@ -42,20 +53,3 @@ print(arr.insert(3))
 print(arr.insert(5))
 print(arr.remove(2))
 print(arr.dados)
-
-# class Lista:
-#     def __init__(self, maxnelemnts: int) -> None:
-#         self.maxnelemnts: int = maxnelemnts
-#         self.dados: list[int] = [0] * maxnelemnts
-#         self.nelements: int = 0
-
-#     def insere_rep(self, x: int) -> bool:
-#         if self.nelements == self.maxnelemnts:
-#             return False
-#         self.dados[self.nelements] = x
-#         self.nelements += 1
-#         return True
-
-# lista = Lista(10)
-# lista.insere_rep(1)
-# print(lista.dados)
