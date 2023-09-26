@@ -74,7 +74,7 @@ class Lista:
             sumS += self.dados[i] ** 2
         return sumS
 
-    def removeOrdinal(self, k: int) -> (bool, int):
+    def remove_ordinal(self, k: int) -> (bool, int):
         if k <= 0 or k > self.nelemens:
             return (False, -1)
         removed = self.dados[k - 1]
@@ -82,12 +82,18 @@ class Lista:
         self.dados[k - 1] = self.dados[self.nelemens]
         return (True, removed)
 
+    def print_valid_list(self):
+        return [self.dados[i] for i in range(self.nelemens)]
+
 arr = Lista(5)
 
 print(arr.insert(3))
 print(arr.insert(4))
 print(arr.insert(2))
 print(arr.insert(4))
+print(arr.insert(10))
+print(arr.insert(20))
+print(arr.insert(12))
 print(arr.dados)
-print(arr.removeOrdinal(1))
-print(arr.dados)
+
+print(arr.print_valid_list())
