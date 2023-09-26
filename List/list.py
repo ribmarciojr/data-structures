@@ -82,6 +82,17 @@ class Lista:
         self.dados[k - 1] = self.dados[self.nelemens]
         return (True, removed)
 
+    def remove_greater(self) -> (bool, int):
+        if self.nelemens == 0:
+            return (False, -1)
+        greater, index = self.dados[0], 0
+        for i in range(1, self.nelemens):
+            if self.dados[i] > greater:
+                greater, index = self.dados[i], i
+        self.nelemens -= 1
+        self.dados[i] = self.dados[self.nelemens]
+        return (True, greater)
+
     def print_valid_list(self):
         return [self.dados[i] for i in range(self.nelemens)]
 
