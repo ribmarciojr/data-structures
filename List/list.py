@@ -58,13 +58,21 @@ class Lista:
         average = average / self.nelemens
         return (True, average)
         
-        
+    def sum_all_elements(self):
+        if self.nelemens == 0:
+            return 0
+        sumA = 0
+        for i in range(self.nelemens):
+            sumA += self.dados[i]
+        return sumA
+
 
 arr = Lista(5)
 
 print(arr.insert(5))
-print(arr.insert(5))
+print(arr.insert(15))
 # print(arr.insert(3))
 # print(arr.insert(4))
 print(arr.dados)
 print(arr.average())
+print(arr.sum_all_elements())
