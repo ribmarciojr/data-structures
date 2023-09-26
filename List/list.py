@@ -40,7 +40,7 @@ class Lista:
                 smaller = self.dados[i]
         return (True, smaller)
 
-    def oddQuantity(self):
+    def oddQuantity(self) -> (bool, int):
         if self.nelemens == 0:
             return (False, -1)
         quantity = 0
@@ -49,14 +49,22 @@ class Lista:
                 quantity += 1
         return (True, quantity)
 
+    def average(self) -> (bool, float):
+        if self.nelemens == 0:
+            return (False, 0.0)
+        average = 0
+        for i in range(self.nelemens):
+            average += self.dados[i]
+        average = average / self.nelemens
+        return (True, average)
+        
+        
 
 arr = Lista(5)
 
-print(arr.insert(1))
-print(arr.insert(2))
-print(arr.insert(3))
-print(arr.insert(4))
-print(arr.insert(3))
 print(arr.insert(5))
-print(arr.remove(2))
+print(arr.insert(5))
+# print(arr.insert(3))
+# print(arr.insert(4))
 print(arr.dados)
+print(arr.average())
