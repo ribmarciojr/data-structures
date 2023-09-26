@@ -40,7 +40,7 @@ class Lista:
                 smaller = self.dados[i]
         return (True, smaller)
 
-    def oddQuantity(self) -> (bool, int):
+    def odd_quantity(self) -> (bool, int):
         if self.nelemens == 0:
             return (False, -1)
         quantity = 0
