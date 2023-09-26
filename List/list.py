@@ -71,16 +71,23 @@ class Lista:
             return 0
         sumS = 0
         for i in range(self.nelemens):
-            sumS += self.dados[i] * self.dados[i]
+            sumS += self.dados[i] ** 2
         return sumS
+
+    def removeOrdinal(self, k: int) -> (bool, int):
+        if k <= 0 or k > self.nelemens:
+            return (False, -1)
+        removed = self.dados[k - 1]
+        self.nelemens -= 1
+        self.dados[k - 1] = self.dados[self.nelemens]
+        return (True, removed)
 
 arr = Lista(5)
 
 print(arr.insert(3))
 print(arr.insert(4))
-# print(arr.insert(3))
-# print(arr.insert(4))
+print(arr.insert(2))
+print(arr.insert(4))
 print(arr.dados)
-print(arr.average())
-print(arr.sum_all_elements())
-print(arr.sum_of_squares())
+print(arr.removeOrdinal(1))
+print(arr.dados)
