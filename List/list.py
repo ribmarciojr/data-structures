@@ -40,7 +40,14 @@ class Lista:
                 smaller = self.dados[i]
         return (True, smaller)
 
-    
+    def oddQuantity(self):
+        if self.nelemens == 0:
+            return (False, -1)
+        quantity = 0
+        for i in range(self.nelemens):
+            if(self.dados[i] % 2):
+                quantity += 1
+        return (True, quantity)
 
 
 arr = Lista(5)
